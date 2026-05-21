@@ -18,10 +18,9 @@
     <main class="container" style="padding-top: 100px; max-width: 600px;">
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white text-center">
-                <h3>Detail Pesanan (Dari Database)</h3>
+                <h3>Detail Pesanan</h3>
             </div>
             <div class="card-body">
-                <!-- PENGUBAHAN: Mengubah $order menjadi $pesanan sesuai Controller -->
                 @if(isset($pesanan) && $pesanan)
                     @if(session('success_id') || session('success'))
                         <div class="alert alert-success text-center" role="alert">
@@ -30,8 +29,6 @@
                     @endif
 
                     <ul class="list-group list-group-flush fs-5">
-                        <!-- CATATAN: Pastikan kolom 'makanan' & 'minuman' ada di database kamu. 
-                             Jika kamu menggunakan kolom lain seperti 'nama_pemesan', silakan sesuaikan di bawah ini -->
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span><strong>Makanan:</strong></span>
                             <span class="badge bg-secondary text-wrap">{{ $pesanan->makanan ?? '-' }}</span>

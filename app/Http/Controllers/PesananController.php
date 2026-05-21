@@ -3,25 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pesanan;
+
 class PesananController extends Controller
 {
-    public function store(Request $request)
+    public function index()
+    {
+        $pesanan = Pesanan::latest()->first();
+
+        return view('pesanananda', compact('pesanan'));
+    }
+
+    public function proses(Request $request)
     {
         $request->validate([
-            'makanan' => 'required|string',
-            'minuman' => 'required|string',
+            'makanan' => 'required',
+            'minuman' => 'required',
         ]);
 
-        $order = Order::create([
+        $pesananBaru = Pesanan::create([
             'makanan' => $request->input('makanan'),
             'minuman' => $request->input('minuman'),
         ]);
 
-        return redirect('/pesanananda')->with('success_id', $order->id);
-    }
-
-    public function show(pesanan $pesanan)
-    {
-        return view('pesanan.show', compact('pesanan'));
+        return redirect('/pesanananda')
+            ->with('success', true)
+            ->with('success_id', $pesananBaru->id);
     }
 }

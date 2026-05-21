@@ -15,17 +15,13 @@ Route::get('/', function () {
 Route::get('/menu', function() {
     return view('menu');
 });
+Route::view('/menu', 'menu');
 
-Route::POST('/proses-pesanan', function (Request $request){
-    Session([
-        'makanan_pilih' => $request->input('makanan'),
-        'minuman_pilih' => $request->input('minuman')
-    ]);
-    return redirect('/pesanananda');
+Route::get('/pesanananda', function() {
+    return view('pesanananda');
 });
 
 Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
-Route::get('/pesanananda', [PesananController::class, 'index'])->name('pesanan');
-Route::post('/pesanananda', [PesananController::class, 'store']);
-Route::get('/pesanananda', [PesananController::class, 'show']);
+Route::get('/pesanananda', [PesananController::class, 'index'])->name('pesanananda');
+Route::post('/prosespesanan', [PesananController::class, 'proses'])->name('pesanan.proses');
