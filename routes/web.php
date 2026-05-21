@@ -27,5 +27,5 @@ Route::POST('/proses-pesanan', function (Request $request){
 Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/pesanananda', [PesananController::class, 'index'])->name('pesanan');
-Route::post('/proses-pesanan', [OrderController::class, 'store']);
-Route::get('/proses-pesanan', [OrderController::class, 'show']);
+Route::post('/pesanananda', [PesananController::class, 'store']);
+Route::get('/pesanananda', [PesananController::class, 'show']);
