@@ -27,65 +27,31 @@
         <div class="d-flex justify-content-center">
             <h1>Silahkan Pilih Menu</h1>
         </div>
-        <section class="d-flex flex-wrap justify-content-center gap-4 my-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('img/bubur.jpg') }}" class="card-img-top" alt="Bubur Ayam">
-                <div class="card-body">
-                    <p class="card-text">Bubur Ayam jos jis</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="{{asset('img/soto.jpg')}}" class="card-img-top" alt="Soto Ayam">
-                <div class="card-body">
-                    <p class="card-text">Soto Ayam Seger</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('img/kupattahu.jpg') }}" class="card-img-top" alt="Kupat tahu">
-                <div class="card-body">
-                    <p class="card-text">Kupat Tahu makyusss</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('img/lotek.jpg') }}" class="card-img-top" alt="Lotek">
-                <div class="card-body">
-                    <p class="card-text">Lotek enak makyuss</p>
-                </div>
-            </div>
-        </section>
-        <div class="container my-4" sytle="max-width:450px;">
-            <div class="input-group">
-                <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                    <option selected>Pilihan</option>
-                    <option value="1">Soto</option>
-                    <option value="2">Bubur Ayam</option>
-                    <option value="3">Kupat Tahu</option>
-                    <option value="3">Lotek</option>
-                </select>
-            </div>
+        <form action="{{ url('/prosespesanan') }}" method="POST">
+            @csrf
             <section class="d-flex flex-wrap justify-content-center gap-4 my-4">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('img/esteh.jpg') }}" class="card-img-top" alt="Es Teh">
+                    <img src="{{ asset('img/bubur.jpg') }}" class="card-img-top" alt="Bubur Ayam">
                     <div class="card-body">
-                        <p class="card-text">Esteh Seger</p>
+                        <p class="card-text">Bubur Ayam jos jis</p>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img src="{{ asset ('img/es jeruk.jpg') }}" class="card-img-top" alt="es jeruk">
+                    <img src="{{ asset('img/soto.jpg') }}" class="card-img-top" alt="Soto Ayam">
                     <div class="card-body">
-                        <p class="card-text">Es Jeruk josjis</p>
+                        <p class="card-text">Soto Ayam Seger</p>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('img/tanget.jpg') }}" class="card-img-top" alt="Teh anget">
+                    <img src="{{ asset('img/kupattahu.jpg') }}" class="card-img-top" alt="Kupat tahu">
                     <div class="card-body">
-                        <p class="card-text">Teh Anget</p>
+                        <p class="card-text">Kupat Tahu makyusss</p>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img src="{{ asset ('img/jeruk.jpg') }}" class="card-img-top" alt="Lotek">
+                    <img src="{{ asset('img/lotek.jpg') }}" class="card-img-top" alt="Lotek">
                     <div class="card-body">
-                        <p class="card-text">Jeruk Anget</p>
+                        <p class="card-text">Lotek enak makyuss</p>
                     </div>
                 </div>
             </section>
@@ -93,20 +59,60 @@
                 <div class="input-group">
                     <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                         <option selected>Pilihan</option>
-                        <option value="1">Es Teh </option>
-                        <option value="2">Es jeruk</option>
-                        <option value="3">Teh Anget</option>
-                        <option value="3">Jeruk Anget</option>
+                        <option value="1">Soto</option>
+                        <option value="2">Bubur Ayam</option>
+                        <option value="3">Kupat Tahu</option>
+                        <option value="4">Lotek</option>
                     </select>
                 </div>
+                <section class="d-flex flex-wrap justify-content-center gap-4 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ asset('img/esteh.jpg') }}" class="card-img-top" alt="Es Teh">
+                        <div class="card-body">
+                            <p class="card-text">Esteh Seger</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ asset('img/es jeruk.jpg') }}" class="card-img-top" alt="es jeruk">
+                        <div class="card-body">
+                            <p class="card-text">Es Jeruk josjis</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ asset('img/tanget.jpg') }}" class="card-img-top" alt="Teh anget">
+                        <div class="card-body">
+                            <p class="card-text">Teh Anget</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ asset('img/jeruk.jpg') }}" class="card-img-top" alt="Lotek">
+                        <div class="card-body">
+                            <p class="card-text">Jeruk Anget</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="container my-4" sytle="max-width:450px;">
+                    <div class="input-group">
+                        <select class="form-select" id="inputGroupSelect04"
+                            aria-label="Example select with button addon">
+                            <option selected>Pilihan</option>
+                            <option value="1">Es Teh </option>
+                            <option value="2">Es jeruk</option>
+                            <option value="3">Teh Anget</option>
+                            <option value="4">Jeruk Anget</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center my-4">
+                    <a href="{{ url('/pesanananda') }}" type="button" class="btn btn-primary"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Pesan</a>
+                </div>
             </div>
-            <div class="d-flex justify-content-center my-4">
-                <a href="{{ url('/pesanananda') }}" type="button" class="btn btn-primary"
-                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Pesan</a>
-            </div>
+        </form>
+    </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+</script>
 
 </html>

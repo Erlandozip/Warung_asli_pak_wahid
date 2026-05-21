@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-class MenuController extends Controller
+class WelcomeController extends Controller
 {
     public function index()
     {
